@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 def get_days_from_today(date):
-    current_data = datetime.now()
+    current_data = datetime.today()
     date_datetime = datetime.strptime(date, '%Y-%m-%d')
     different = current_data - date_datetime
    
