@@ -1,5 +1,10 @@
-
+import re
 
 def normalize_phone(phone_number):
-    if not phone_number.startswith('+38'):
-        phone_number = '38' + phone_number
+    
+    correct_phone = re.sub(r'\D', '', phone_number)
+
+    if not correct_phone.startswith('+'):
+        correct_phone = '+38' + correct_phone
+
+    return correct_phone
