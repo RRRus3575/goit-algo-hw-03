@@ -5,12 +5,15 @@ from datetime import datetime
 
 def get_days_from_today(date):
     current_data = datetime.today()
-    date_datetime = datetime.strptime(date, '%Y-%m-%d')
-    different = current_data - date_datetime
+    try:    
+        date_datetime = datetime.strptime(date, '%Y-%m-%d')    
+        different = current_data - date_datetime
+        return different.days
+    except:
+        return 'This is not a valid format'
    
-    return different.days
+    
 
 
 
-
-print(get_days_from_today('2024-01-10'))
+print(get_days_from_today('2024-01'))
